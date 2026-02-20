@@ -244,6 +244,8 @@ if st.session_state.chat_history:
             if 'answer' in result:
                 st.markdown("**Answer:**")
                 st.info(result['answer'])
+                if 'model_used' in result:
+                    st.caption('Model: ' + result['model_used'])
             
             # Display table if available
             if 'table_data' in result and result['table_data'] is not None:
